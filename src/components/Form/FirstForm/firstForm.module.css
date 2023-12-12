@@ -1,0 +1,16 @@
+.container {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.inputFieldWrapper {
+   /* border: 1px solid green; */
+}
+
+.label {
+   display: block;
+   font-weight: 500;
+   font-size: medium;
+   margin-bottom: .5rem;
+}
