@@ -53,15 +53,7 @@ export default function ThirdStep({
                 />
 
                 <div
-                  style={{
-                    cursor: "pointer",
-                    border: "1px solid red",
-                    width: "30%",
-                    height: "35px",
-                    display: "grid",
-                    placeItems: "center",
-                  }}
-                  className="inputFileTypeFile"
+                  className={style.upload}
                   placeholder=""
                   onClick={(e) => {
                     document.getElementById(`dynamicselectedFile-${i}`).click();

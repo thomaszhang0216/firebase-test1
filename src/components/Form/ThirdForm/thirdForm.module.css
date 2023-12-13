@@ -22,10 +22,11 @@
 
 .upload {
    cursor: pointer;
-   border:1px solid red;
+   border:1px solid #f530a8;
    width: 30%;
    height: 35px;
    display: flex;
    justify-content: center;
    align-items: center;
+   color: #f530a8;
 }
