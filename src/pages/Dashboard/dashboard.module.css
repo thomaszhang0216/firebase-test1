@@ -1,0 +1,33 @@
+.tableContainer {
+   margin: 20px;
+}
+
+.table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 10px;
+   color: #fff;
+}
+
+.tableHeader {
+   background-color: #000;
+   color: #fff;
+   padding: 10px;
+}
+
+.table_cell {
+   border: 1px solid #333;
+   padding: 10px;
+}
+
+.even_row {
+   background-color: #222;
+}
+
+.odd_row {
+   background-color: #111;
+}
+
+.table_row:hover {
+   background-color: #555;
+}

@@ -1,0 +1,49 @@
+.container {
+   min-height: 100vh;
+   min-width: 100vw;
+   display: grid;
+   place-items: center;
+}
+
+.formContainer {
+   border-radius: 3px;
+   box-shadow: 0 0 0 6px #383849, 0 0 0 7px #417485;
+   display: flex;
+}
+
+
+.formWrapper {
+   padding: 3rem 1.5rem;
+   min-height: 70vh;
+   min-width: 35vw;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 10px;
+}
+
+
+.formWrapper button[type=submit],
+.formWrapper button[type=button] {
+   border-radius: 3px;
+   border: none;
+   background-color: #f530a8;
+   padding: 0.7rem 1.2rem;
+   color: white;
+   font-weight: 600;
+   min-width: 10%;
+   margin: 0 auto;
+}
+
+.formWrapper button[type=submit]:disabled,
+.formWrapper button[type=button]:disabled {
+ opacity: 0.3;
+}
+
+.buttonContainer{
+   display: flex;
+}
+
+/* .formContainer > * {
+   border: 1px solid red
+} */

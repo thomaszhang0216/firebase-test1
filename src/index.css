@@ -42,3 +42,110 @@ body {
   --shadow-inset: rgba(255, 255, 255, 0.5);
   --color-error: #b94a48;
 }
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+/* Steper */
+
+.container {
+  max-width: 400px;
+  margin: 0px auto;
+}
+
+.custom-colum {
+  text-align: center;
+}
+
+.custom-colum p,
+.custom-colum-id p,
+.custom-colum-mix p {
+  margin: 0px auto;
+  border: 1px solid #50f2ee;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #50f2ee;
+}
+
+.custom-colum h4:after {
+  content: "";
+  background: #50f2ee;
+  height: 100px;
+  width: 3px;
+  position: absolute;
+  top: 107%;
+  left: 0;
+  right: 0;
+  margin: 0px auto;
+}
+
+.custom-colum {
+  position: relative;
+}
+
+.custom-colum h4,
+.custom-colum-id h4,
+.custom-colum-mix h4 {
+  padding: 0;
+  margin: 4px 0;
+  font-weight: 700;
+  color: #50f2ee;
+}
+
+.custom-colum-id,
+.custom-colum-mix {
+  text-align: center;
+  margin-top: 128px;
+  position: relative;
+}
+
+.custom-colum-id h4:after {
+  content: "";
+  background: #50f2ee;
+  height: 100px;
+  width: 3px;
+  position: absolute;
+  top: 107%;
+  left: 0;
+  right: 0;
+  margin: 0px auto;
+}
+
+.noBg {
+  background: none !important;
+}
+
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}

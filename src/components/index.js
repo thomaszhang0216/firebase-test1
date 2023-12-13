@@ -1,4 +1,7 @@
 export { default as FromWrapper } from "./FormWrapper"
 export { default as FirstStep } from "./Form/FirstForm"
 export { default as SecondStep } from "./Form/SecondForm"
+export { default as ThirdStep } from "./Form/ThirdForm"
+export { default as FourthStep } from "./Form/ForthForm/index"
 export { default as CustomInput } from "./Input/CustomInput"
+export { default as CustomButton } from "./Button/CustomButton"
