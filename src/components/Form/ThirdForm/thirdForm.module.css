@@ -19,3 +19,13 @@
    font-size: medium;
    margin-bottom: .5rem;
 }
+
+.upload {
+   cursor: pointer;
+   border:1px solid red;
+   width: 30%;
+   height: 35px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

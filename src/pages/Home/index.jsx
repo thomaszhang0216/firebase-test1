@@ -53,18 +53,14 @@ function App() {
   };
 
   const handleDynamicUpload = (e, i) => {
-    console.log(i);
-    setData((prev) => {
-      let newArr = [...prev.floorPlans];
-      newArr[i]["uploadFloorPlanName"] = e.target.files[0].name;
-      return { ...prev, floorPlans: newArr };
-    });
     const imgs = ref(imgDB, `imgs${v4()}`);
+    debugger
     uploadBytes(imgs, e.target.files[0]).then((data) => {
       getDownloadURL(data.ref).then((val) => {
         setData((prev) => {
           let newArr = [...prev.floorPlans];
           newArr[i]["uploadFloorPlan"] = val;
+          newArr[i]["uploadFloorPlanName"] = e.target.files[0].name;
           return { ...prev, floorPlans: newArr };
         });
       });

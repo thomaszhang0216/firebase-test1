@@ -1,28 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import style from "./dashboard.module.css";
 import { collection, getDocs } from "firebase/firestore";
 import { textDB } from "../../firebase";
 
 function Dashboard() {
+  const [data, setdata] = useState([]);
 
   useEffect(() => {
-  getData()
-  }, [])
-  
-const getData = async () => {
-  const valref = collection(textDB, "txtData");
+    getData();
+  }, []);
 
-  const dataDb = await getDocs(valref);
-  const allData = dataDb.docs.map((val) => ({ ...val.data(), id: val.id }));
-  console.log(allData);
-};
+  const getData = async () => {
+    const valref = collection(textDB, "txtData");
 
-
-  const data = [
-    { name: "John Doe", age: 25, city: "New York" },
-    { name: "Jane Doe", age: 30, city: "Los Angeles" },
-    { name: "Bob Smith", age: 28, city: "Chicago" },
-  ];
+    const dataDb = await getDocs(valref);
+    const allData = dataDb.docs.map((val) => ({ ...val.data(), id: val.id }));
+    console.log(allData);
+    setdata([...allData]);
+  };
+  console.log("data=>", data);
   return (
     <div className={style.tableContainer}>
       <table className={style.table}>
@@ -35,6 +31,7 @@ const getData = async () => {
             <th className={style.tableHeader}>Year Built</th>
             <th className={style.tableHeader}>Number of Units</th>
             <th className={style.tableHeader}>Number of Floors</th>
+            <th className={style.tableHeader}>Upload Unit Mix file</th>
           </tr>
         </thead>
         <tbody>
@@ -48,8 +45,15 @@ const getData = async () => {
               key={index}
             >
               <td className={style.table_cell}>{item.name}</td>
-              <td className={style.table_cell}>{item.age}</td>
-              <td className={style.table_cell}>{item.city}</td>
+              <td className={style.table_cell}>{item.address}</td>
+              <td className={style.table_cell}>{item.type}</td>
+              <td className={style.table_cell}>{item.numberOfBuildings}</td>
+              <td className={style.table_cell}>{item.yearBuilt}</td>
+              <td className={style.table_cell}>{item.numberOfUnits}</td>
+              <td className={style.table_cell}>{item.numberOfFloors}</td>
+              <td className={style.table_cell}>
+                <img height={30} src={item.uploadUnitMixFile} alt={item.name} />
+              </td>
             </tr>
           ))}
         </tbody>

@@ -46,7 +46,7 @@ export default function ThirdStep({
               <div>
                 {!i && <span className={style.label}>Upload Floor Plans</span>}
                 <CustomInput
-                  id="dynamicselectedFile"
+                  id={`dynamicselectedFile-${i}`}
                   type="file"
                   onChange={(e) => handleDynamicUpload(e, i)}
                   style={{ display: "none" }}
@@ -64,7 +64,7 @@ export default function ThirdStep({
                   className="inputFileTypeFile"
                   placeholder=""
                   onClick={(e) => {
-                    document.getElementById("dynamicselectedFile").click();
+                    document.getElementById(`dynamicselectedFile-${i}`).click();
                   }}
                 >
                   {" "}
