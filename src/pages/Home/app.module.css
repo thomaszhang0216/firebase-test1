@@ -25,6 +25,7 @@
 
 .formWrapper button[type=submit],
 .formWrapper button[type=button] {
+   cursor: pointer;
    border-radius: 3px;
    border: none;
    background-color: #f530a8;

@@ -52,7 +52,7 @@ function Dashboard() {
               <td className={style.table_cell}>{item.numberOfUnits}</td>
               <td className={style.table_cell}>{item.numberOfFloors}</td>
               <td className={style.table_cell}>
-                <img height={30} src={item.uploadUnitMixFile} alt={item.name} />
+                <img height={30} width={30} src={item.uploadUnitMixFile} alt={item.name} />
               </td>
             </tr>
           ))}
