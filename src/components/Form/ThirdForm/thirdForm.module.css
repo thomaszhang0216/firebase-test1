@@ -8,9 +8,8 @@
 
 .inputFieldWrapper {
    display: grid;
-   grid-template-columns: repeat(3, 1fr);
+   grid-template-columns: 27% 22% auto;
    gap: 10px 20px;
-   /* border: 1px solid green; */
 }
 
 .label {
@@ -29,4 +28,11 @@
    justify-content: center;
    align-items: center;
    color: #f530a8;
+   position: relative;
+}
+
+.imageText{
+   position: absolute;
+   right: -150px;
+   color: white;
 }

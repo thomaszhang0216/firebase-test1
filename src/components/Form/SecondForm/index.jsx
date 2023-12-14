@@ -1,4 +1,3 @@
-import { GrDocumentMissing } from "react-icons/gr";
 import style from "./secondForm.module.css";
 import FromWrapper from "../../FormWrapper";
 import CustomInput from "../../Input/CustomInput";
@@ -38,34 +37,22 @@ export default function SecondStep({
             max={10}
           />
         </div>
-        <div style={{ position: "relative" }}>
+        <div className={style.relative}>
           <span className={style.label}>Upload Unit Mix file</span>
-          {/* <GrDocumentMissing /> */}
           <CustomInput
             id="selectedFile"
             type="file"
             onChange={handleUpload}
             style={{ display: "none" }}
           />
-          <i
-            style={{
-              position: "absolute",
-              top: "33px",
-              left: "5px",
-              bottom: "0",
-              color: "black",
-            }}
-            class="fa-solid  fa fa-image"
-          ></i>
-
-          <CustomInput
-            style={{ marginBottom: "5px" }}
-            className="inputFileTypeFile"
-            placeholder=""
+          <i className={`fa-solid  fa fa-image ${style.iconStyle}`}></i>
+          <div
+          role="button"
+            className={style.uploadDiv}
             onClick={(e) => {
               document.getElementById("selectedFile").click();
             }}
-          />
+          ></div>
           {uploadUnitMixFileName}
         </div>
       </div>

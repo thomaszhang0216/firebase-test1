@@ -5,8 +5,6 @@ import CustomInput from "../../Input/CustomInput";
 export default function ThirdStep({
   numberOfFloors,
   floorPlans,
-  updateFields,
-  handleUpload,
   handleFloorPlanChange,
   handleDynamicUpload,
 }) {
@@ -16,7 +14,7 @@ export default function ThirdStep({
         {Array(Number(numberOfFloors))
           .fill(0)
           .map((_, i) => (
-            <div className={style.inputFieldWrapper}>
+            <div key={i} className={style.inputFieldWrapper}>
               <div>
                 {!i && <span className={style.label}>Type</span>}
                 <CustomInput
@@ -54,13 +52,19 @@ export default function ThirdStep({
 
                 <div
                   className={style.upload}
-                  placeholder=""
+                  role="button"
                   onClick={(e) => {
                     document.getElementById(`dynamicselectedFile-${i}`).click();
                   }}
                 >
                   {" "}
                   <i class="fa-solid  fa fa-image"></i>
+                  <span
+                  className={style.imageText}
+                  >
+                    {" "}
+                    {floorPlans[i]?.uploadFloorPlanName}
+                  </span>
                 </div>
               </div>
             </div>

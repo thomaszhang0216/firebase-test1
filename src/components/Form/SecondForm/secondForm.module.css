@@ -15,3 +15,22 @@
    font-size: medium;
    margin-bottom: .5rem;
 }
+
+.relative{
+   position: relative;
+}
+
+.iconStyle{
+   position: absolute;
+   top: 33px;
+   left:5px;
+   bottom: 0;
+   color: black;
+}
+
+.uploadDiv{
+   height: 1.7rem;
+   background: white;
+   cursor: pointer;
+   margin-bottom: .4rem;
+}

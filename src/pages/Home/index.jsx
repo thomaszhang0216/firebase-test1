@@ -54,7 +54,6 @@ function App() {
 
   const handleDynamicUpload = (e, i) => {
     const imgs = ref(imgDB, `imgs${v4()}`);
-    debugger
     uploadBytes(imgs, e.target.files[0]).then((data) => {
       getDownloadURL(data.ref).then((val) => {
         setData((prev) => {
@@ -78,19 +77,21 @@ function App() {
 
   const { step, next, back, isFirstStep, isLastStep, currentStepIndex } =
     useMultiStepForm([
-      <FirstStep {...data} updateFields={updateFields} />,
+      <FirstStep {...data} updateFields={updateFields} key={0} />,
       <SecondStep
         {...data}
         updateFields={updateFields}
         handleUpload={handleUpload}
+        key={1}
       />,
       <ThirdStep
         {...data}
         updateFields={updateFields}
         handleFloorPlanChange={handleFloorPlanChange}
         handleDynamicUpload={handleDynamicUpload}
+        key={2}
       />,
-      <FourthStep />,
+      <FourthStep key={3} />,
     ]);
   const addData = () => {
     if (currentStepIndex === 1) {
@@ -112,10 +113,11 @@ function App() {
       });
     }
     next();
+    checkFields();
   };
   async function onSubmit(e) {
     e.preventDefault();
-    checkFields();
+   
     if (!isLastStep) return addData();
 
     const valref = collection(textDB, "txtData");
@@ -141,6 +143,7 @@ function App() {
       let requiredFieldNames = {
         numberOfUnits: data.numberOfUnits,
         numberOfFloors: data.numberOfFloors,
+        uploadUnitMixFileName:data.uploadUnitMixFileName,
       };
       let emptyField = Object.values(requiredFieldNames).some(
         (field) => field === ""
