@@ -30,8 +30,6 @@ function App() {
   const [data, setData] = useState(INITIAL_DATA);
   const [buttonDisable, setButtonDisable] = useState(false);
 
-  console.log(data);
-
   useEffect(() => {
     checkFields();
   }, [data]);
@@ -117,7 +115,7 @@ function App() {
   };
   async function onSubmit(e) {
     e.preventDefault();
-   
+
     if (!isLastStep) return addData();
 
     const valref = collection(textDB, "txtData");
@@ -143,7 +141,7 @@ function App() {
       let requiredFieldNames = {
         numberOfUnits: data.numberOfUnits,
         numberOfFloors: data.numberOfFloors,
-        uploadUnitMixFileName:data.uploadUnitMixFileName,
+        uploadUnitMixFileName: data.uploadUnitMixFileName,
       };
       let emptyField = Object.values(requiredFieldNames).some(
         (field) => field === ""

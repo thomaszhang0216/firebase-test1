@@ -15,10 +15,9 @@ function Dashboard() {
 
     const dataDb = await getDocs(valref);
     const allData = dataDb.docs.map((val) => ({ ...val.data(), id: val.id }));
-    console.log(allData);
     setdata([...allData]);
   };
-  console.log("data=>", data);
+
   return (
     <div className={style.tableContainer}>
       <table className={style.table}>
