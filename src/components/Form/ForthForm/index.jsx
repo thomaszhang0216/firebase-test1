@@ -1,7 +1,5 @@
-import { GrDocumentMissing } from "react-icons/gr";
 import style from "./secondForm.module.css";
 import FromWrapper from "../../FormWrapper";
-import CustomInput from "../../Input/CustomInput";
 
 export default function FourthStep() {
   return (
